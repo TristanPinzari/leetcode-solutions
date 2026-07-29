@@ -1,6 +1,10 @@
 function removeElement(nums: number[], val: number): number {
-    const correct = nums.filter(n => n !== val);
-    nums.splice(0, correct.length, ...correct);
-    nums.length = correct.length;
-    return correct.length;
+    let index = 0;
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== val) {
+            nums[index] = nums[i];
+            index++;
+        }
+    }
+    return index;
 };
