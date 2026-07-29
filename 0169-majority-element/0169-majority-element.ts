@@ -1,8 +1,11 @@
 function majorityElement(nums: number[]): number {
-    let failed = [];
-    for (const ele of nums) {
-        if (failed.includes(ele)) continue;
-        if (nums.filter(n => n === ele).length > nums.length / 2) return ele;
-        failed.push(ele);
+    let candidate;
+    let sum = 0;
+    for(let i = 0; i < nums.length; i++) {
+        if (sum === 0) {
+            candidate = nums[i];
+        }
+        sum += (candidate === nums[i]) ?  1 : -1
     }
+    return candidate;
 };
