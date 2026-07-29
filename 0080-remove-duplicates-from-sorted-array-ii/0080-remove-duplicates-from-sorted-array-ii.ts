@@ -7,7 +7,7 @@ function removeDuplicates(nums: number[]): number {
             if (nums[i] !== nums[i + 1]) continue;
             nums[index++] = nums[i];
             curr = nums[i];
-            i++;
+            i++
         }
     }
     return index;
