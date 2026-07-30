@@ -1,16 +1,18 @@
-/**
- Do not return anything, modify nums in-place instead.
- */
-function rotate(nums: number[], k: number): void {
-    const n = nums.length;
-    const shiftTimes = k % n;
-    if (shiftTimes === 0) return;
+function rotate(arr: number[], k: number): void { 
+  
+const n = arr.length
+if(n==0) return 
+ k= k%n
+if (k== 0) return 
 
-    const rotated = new Array(n);
-    for (let i = 0; i < n; i++) {
-        rotated[(i + shiftTimes) % n] = nums[i];
-    }
-    for (let i = 0; i < n; i++) {
-        nums[i] = rotated[i];
+reverse(arr,0,n-1)
+reverse(arr,0,k-1)
+reverse(arr,k,n-1)
+};
+function reverse (arr:number[],start:number     , end:number ){
+    while(start < end){
+        [arr[start],arr[end]] = [arr[end],arr[start]]
+        start++
+        end--
     }
 }
