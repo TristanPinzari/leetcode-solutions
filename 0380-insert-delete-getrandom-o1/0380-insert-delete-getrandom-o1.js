@@ -32,4 +32,3 @@ class RandomizedSet {
         return this.list[randomIndex];
     }
 }
-
