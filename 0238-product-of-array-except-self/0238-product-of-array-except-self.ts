@@ -1,5 +1,5 @@
 function productExceptSelf(nums: number[]): number[] {
-let n = nums.length;
+    let n = nums.length;
     let res = new Array(n);
 
     let pre = 1;
