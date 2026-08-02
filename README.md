@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0045-jump-game-ii](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0055-jump-game) |
+| [0238-product-of-array-except-self](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0238-product-of-array-except-self) |
 | [0274-h-index](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0274-h-index) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0380-insert-delete-getrandom-o1) |
 ## Dynamic Programming
@@ -42,4 +43,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0380-insert-delete-getrandom-o1](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0380-insert-delete-getrandom-o1) |
+## Prefix Sum
+|  |
+| ------- |
+| [0238-product-of-array-except-self](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0238-product-of-array-except-self) |
 <!---LeetCode Topics End-->
