@@ -5,7 +5,7 @@ function canCompleteCircuit(gas: number[], cost: number[]): number {
         totalAvailable += gas[i];
     }
     if (totalNeeded > totalAvailable) return -1;
-    let answer= 0, net = 0;
+    let answer = 0, net = 0;
     for (let i = 0; i < gas.length; i++) {
         net += gas[i] - cost[i];
         if (net < 0) {
