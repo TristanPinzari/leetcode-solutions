@@ -1,27 +1,34 @@
 function candy(ratings: number[]): number {
-    let total = ratings.length;
-    let lastExtra = 0
-    const temp = new Array(ratings.length);
-    const temp2 = new Array(ratings.length);
-    for (let i = 0; i < ratings.length; i++) {
-        if (ratings[i - 1] < ratings[i]) {
-            lastExtra++;
-        } else {
-            lastExtra = 0;
+    const n = ratings.length;
+    let totalCandies = n;
+    let i = 1;
+
+    while (i < n) {
+        if (ratings[i] === ratings[i - 1]) {
+            i++;
+            continue;
         }
-        temp[i] = lastExtra;
-    }
-    lastExtra = 0;
-    for (let i = ratings.length - 1; i >= 0; i--) {
-        if (ratings[i + 1] < ratings[i]) {
-            lastExtra++;
-        } else {
-            lastExtra = 0;
+
+        let currentPeak = 0;
+        while (i < n && ratings[i] > ratings[i - 1]) {
+            currentPeak++;
+            totalCandies += currentPeak;
+            i++;
         }
-        temp2[i] = lastExtra;
+
+        if (i === n) {
+            return totalCandies;
+        }
+
+        let currentValley = 0;
+        while (i < n && ratings[i] < ratings[i - 1]) {
+            currentValley++;
+            totalCandies += currentValley;
+            i++;
+        }
+
+        totalCandies -= Math.min(currentPeak, currentValley);
     }
-    for (let i = 0; i < ratings.length; i++) {
-        total += Math.max(temp2[i] ?? 0, temp[i] ?? 0);
-    }
-    return total;
+
+    return totalCandies; 
 };
