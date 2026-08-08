@@ -69,6 +69,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0013-roman-to-integer](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0013-roman-to-integer) |
 | [0014-longest-common-prefix](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0014-longest-common-prefix) |
 | [0058-length-of-last-word](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0058-length-of-last-word) |
+| [0151-reverse-words-in-a-string](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0151-reverse-words-in-a-string) |
 | [0387-first-unique-character-in-a-string](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0387-first-unique-character-in-a-string) |
 ## Queue
 |  |
@@ -79,6 +80,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0042-trapping-rain-water](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0042-trapping-rain-water) |
 | [0088-merge-sorted-array](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0088-merge-sorted-array) |
+| [0151-reverse-words-in-a-string](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0151-reverse-words-in-a-string) |
 ## Stack
 |  |
 | ------- |
