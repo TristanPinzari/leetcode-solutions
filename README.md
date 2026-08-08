@@ -39,11 +39,13 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Hash Table
 |  |
 | ------- |
+| [0013-roman-to-integer](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0013-roman-to-integer) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0380-insert-delete-getrandom-o1) |
 | [0387-first-unique-character-in-a-string](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0387-first-unique-character-in-a-string) |
 ## Math
 |  |
 | ------- |
+| [0013-roman-to-integer](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0013-roman-to-integer) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0380-insert-delete-getrandom-o1) |
 ## Design
 |  |
@@ -60,6 +62,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## String
 |  |
 | ------- |
+| [0013-roman-to-integer](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0013-roman-to-integer) |
 | [0387-first-unique-character-in-a-string](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0387-first-unique-character-in-a-string) |
 ## Queue
 |  |
