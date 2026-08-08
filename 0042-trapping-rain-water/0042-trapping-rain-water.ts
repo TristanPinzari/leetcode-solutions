@@ -1,23 +1,21 @@
 function trap(height: number[]): number {
-    let total = 0;
-    const n = height.length;
-    const left = new Array(n), right = new Array(n);
+    let left = 0;
+    let right = height.length - 1;
+    let leftMax = height[left];
+    let rightMax = height[right];
+    let water = 0;
 
-    let highest = height[0];
-    for (let i = 1; i < n - 1; i++) {
-        left[i] = highest;
-        if (height[i] >= highest) highest = height[i];
+    while (left < right) {
+        if (leftMax < rightMax) {
+            left++;
+            leftMax = Math.max(leftMax, height[left]);
+            water += leftMax - height[left];
+        } else {
+            right--;
+            rightMax = Math.max(rightMax, height[right]);
+            water += rightMax - height[right];
+        }
     }
 
-    highest = height[n - 1];
-    for (let i = n - 2; i > 0; i--) {
-        right[i] = highest;
-        if (height[i] >= highest) highest = height[i];
-    }
-
-    for (let i = 1; i < n - 1; i++) {
-        total += Math.max(0, Math.min(left[i], right[i]) - height[i]);
-    }
-
-    return total;
+    return water;
 };
