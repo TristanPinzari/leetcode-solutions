@@ -1,18 +1,23 @@
 function trap(height: number[]): number {
-    const sorted = [...height].sort((a, b) => b - a);
     let total = 0;
-    const lowest = sorted[height.length - 1];
-    const highest = sorted[1];
-    for (let i = Math.max(lowest, 1); i <= highest; i++) {
-        let lastBlockIndex = null;
-        for (let j = 0; j < height.length; j++) {
-            if (height[j] >= i) {
-                if (lastBlockIndex !== null && j - lastBlockIndex > 1) {
-                    total += Math.max(0, j - lastBlockIndex - 1)
-                };
-                lastBlockIndex = j;
-            }
-        }
+    const n = height.length;
+    const left = new Array(n), right = new Array(n);
+
+    let highest = height[0];
+    for (let i = 1; i < n - 1; i++) {
+        left[i] = highest;
+        if (height[i] >= highest) highest = height[i];
     }
+
+    highest = height[n - 1];
+    for (let i = n - 2; i > 0; i--) {
+        right[i] = highest;
+        if (height[i] >= highest) highest = height[i];
+    }
+
+    for (let i = 1; i < n - 1; i++) {
+        total += Math.max(0, Math.min(left[i], right[i]) - height[i]);
+    }
+
     return total;
 };
