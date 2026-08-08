@@ -1,18 +1,13 @@
-function intToRoman(num: number): string {
-    let res = "";
-    const keys = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
-    const values = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+const thousands = ["", "M", "MM", "MMM"];
+const hundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"];
+const tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"];
+const ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"];
 
-    while (num > 0) {
-        for (let i = 0; i < keys.length; i ++) {
-            const key = keys[i], value = values[i];
-            if (num < value) continue;
-            const times = Math.floor(num / value);
-            num -= value * times;
-            res += key.repeat(times);
-            console.log(num, res);
-            break; 
-        }
-    }
-    return res;
-};
+function intToRoman(num: number): string {
+    return (
+        thousands[Math.floor(num / 1000)] +
+        hundreds[Math.floor((num % 1000) / 100)] +
+        tens[Math.floor((num % 100) / 10)] +
+        ones[num % 10]
+    );
+}
