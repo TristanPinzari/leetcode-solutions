@@ -23,6 +23,5 @@ function romanToInt(s: string): number {
         };
     }
 
-    console.log(arr);
     return total;
 };
