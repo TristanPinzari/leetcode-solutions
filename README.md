@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0011-container-with-most-water](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0011-container-with-most-water) |
 | [0014-longest-common-prefix](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0014-longest-common-prefix) |
+| [0015-3sum](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0015-3sum) |
 | [0042-trapping-rain-water](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0042-trapping-rain-water) |
 | [0045-jump-game-ii](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0055-jump-game) |
@@ -34,6 +35,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Sorting
 |  |
 | ------- |
+| [0015-3sum](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0015-3sum) |
 | [0088-merge-sorted-array](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0088-merge-sorted-array) |
 | [0274-h-index](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0274-h-index) |
 ## Counting Sort
@@ -87,6 +89,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0011-container-with-most-water](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0011-container-with-most-water) |
+| [0015-3sum](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0015-3sum) |
 | [0028-find-the-index-of-the-first-occurrence-in-a-string](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0028-find-the-index-of-the-first-occurrence-in-a-string) |
 | [0042-trapping-rain-water](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0042-trapping-rain-water) |
 | [0088-merge-sorted-array](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0088-merge-sorted-array) |
