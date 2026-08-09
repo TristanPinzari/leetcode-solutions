@@ -1,9 +1,13 @@
 function isSubsequence(s: string, t: string): boolean {
-    let index = 0;
-    for (let i = 0; i < s.length; i++) {
-        const res = t.indexOf(s[i], index);
-        if (res === -1) return false;
-        index = res + 1;
+    let sp = 0;
+    let tp = 0;
+
+    while (sp < s.length && tp < t.length) {
+        if (s[sp] === t[tp]) {
+            sp++;
+        }
+        tp++;
     }
-    return true;
+
+    return sp === s.length; 
 };
