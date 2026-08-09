@@ -1,7 +1,11 @@
 function twoSum(numbers: number[], target: number): number[] {
-    for (let i = 0; i < numbers.length; i++) {
-        for (let j = i + 1; j < numbers.length; j++) {
-            if (numbers[i] + numbers[j] === target) return [i + 1, j + 1];
+    let i = 0, j = numbers.length - 1;
+    while (numbers[i] + numbers[j] !== target) {
+        if (target > numbers[i] + numbers[j]) {
+            i++;
+        } else {
+            j--;
         }
     }
+    return [i + 1, j + 1];
 };
