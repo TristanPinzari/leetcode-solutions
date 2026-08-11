@@ -1,31 +1,56 @@
 function findSubstring(s: string, words: string[]): number[] {
-    const results = new Array();
-    const n = words[0].length;
-    const wordsMap = new Map();
-    for (let i = 0; i < words.length; i++) {
-        const curr = words[i];
-        wordsMap.set(curr, (wordsMap.get(curr) ?? 0) + 1);
+    const results: number[] = [];
+    const L = words[0].length;
+    const k = words.length;
+    const totalLen = L * k;
+    if (s.length < totalLen) return results;
+
+    const wordsMap = new Map<string, number>();
+    for (const w of words) {
+        wordsMap.set(w, (wordsMap.get(w) ?? 0) + 1);
     }
-    const map = new Map();
-    let left = 0;
-    console.log(wordsMap);
-    for (let i = 0; i <= s.length - n * words.length; i++) {
-        let index = i, counter = 0;
-        while (index < i + n * words.length) {
-            const slice = s.slice(index, index + n);
-            if (wordsMap.has(slice) && wordsMap.get(slice) >= (map.get(slice) ?? 0) + 1) {
-                counter++;
-                if (counter === words.length) {
-                    results.push(i);
-                    break;
+
+    // One independent pass per starting offset
+    for (let r = 0; r < L; r++) {
+        let left = r;
+        let count = 0; // number of words currently correctly placed in the window
+        const windowMap = new Map<string, number>();
+
+        for (let right = r; right + L <= s.length; right += L) {
+            const word = s.slice(right, right + L);
+
+            if (wordsMap.has(word)) {
+                windowMap.set(word, (windowMap.get(word) ?? 0) + 1);
+                count++;
+
+                // too many of this word — shrink from the left until valid
+                while (windowMap.get(word)! > wordsMap.get(word)!) {
+                    const leftWord = s.slice(left, left + L);
+                    windowMap.set(leftWord, windowMap.get(leftWord)! - 1);
+                    left += L;
+                    count--;
                 }
-                map.set(slice, (map.get(slice) ?? 0) + 1);
+
+                // window has grown too wide — shrink from the left
+                if (right - left + L === totalLen) {
+                    // window is exactly the right size AND all counts valid
+                    if (count === k) results.push(left);
+                }
+                // if window exceeds totalLen in words, shrink by one from left
+                if (right - left + L > totalLen) {
+                    const leftWord = s.slice(left, left + L);
+                    windowMap.set(leftWord, windowMap.get(leftWord)! - 1);
+                    left += L;
+                    count--;
+                }
             } else {
-                break;
+                // invalid word — reset window entirely, starting fresh after this word
+                windowMap.clear();
+                count = 0;
+                left = right + L;
             }
-            index += n;
         }
-        map.clear();
     }
+
     return results;
-};
+}
