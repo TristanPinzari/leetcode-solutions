@@ -2,10 +2,16 @@
  Do not return anything, modify matrix in-place instead.
  */
 function rotate(matrix: number[][]): void {
-    const n = matrix.length, copy = matrix.map(row => [...row]);;
-    for (let i = 0; i < n; i++) {
-        for (let j = 0; j < n; j++) {
-            matrix[i][j] = copy[n - j - 1][i];
+    const n = matrix.length, layers = Math.floor(n / 2);
+    for (let i = 0; i < layers; i++) {
+        for (let j = i; j < i + n - i * 2 - 1; j++) {
+            let sorted = 0, last = [i, j, matrix[i][j]];
+            while (sorted !== 4) {
+                const i = last[1], j = n - last[0] - 1, temp = matrix[i][j];
+                matrix[i][j] = last[2];
+                last = [i, j, temp];
+                sorted++;
+            }
         }
     }
 };
