@@ -9,6 +9,7 @@ function setZeroes(matrix: number[][]): void {
             if (matrix[i][j] === 0) {
                 mSet.add(i);
                 nSet.add(j);
+                continue;
             };
         }
     }
