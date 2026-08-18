@@ -18,6 +18,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0134-gas-station](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0134-gas-station) |
 | [0135-candy](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0135-candy) |
 | [0167-two-sum-ii-input-array-is-sorted](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0167-two-sum-ii-input-array-is-sorted) |
+| [0200-number-of-islands](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0200-number-of-islands) |
 | [0209-minimum-size-subarray-sum](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0209-minimum-size-subarray-sum) |
 | [0238-product-of-array-except-self](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0238-product-of-array-except-self) |
 | [0274-h-index](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0274-h-index) |
@@ -159,8 +160,21 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0048-rotate-image](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0048-rotate-image) |
 | [0054-spiral-matrix](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0054-spiral-matrix) |
 | [0073-set-matrix-zeroes](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0073-set-matrix-zeroes) |
+| [0200-number-of-islands](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0200-number-of-islands) |
 ## Simulation
 |  |
 | ------- |
 | [0054-spiral-matrix](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0054-spiral-matrix) |
+## Depth-First Search
+|  |
+| ------- |
+| [0200-number-of-islands](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0200-number-of-islands) |
+## Breadth-First Search
+|  |
+| ------- |
+| [0200-number-of-islands](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0200-number-of-islands) |
+## Union-Find
+|  |
+| ------- |
+| [0200-number-of-islands](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0200-number-of-islands) |
 <!---LeetCode Topics End-->
