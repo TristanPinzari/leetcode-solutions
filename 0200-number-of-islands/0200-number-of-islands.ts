@@ -1,37 +1,24 @@
-var numIslands = function(grid) {
-    let islands = 0;
-    const visited = new Set();
-    const rows = grid.length;
-    const cols = grid[0].length;
+function numIslands(grid: string[][]): number {
+    let result = 0;
 
-    const bfs = (r, c) => {
-        const q = [];
-        visited.add(`${r},${c}`);
-        q.push([r, c]);
+    const dfs = (row, col) => {
+        if (row < 0 || row >= grid.length || col < 0 || col >= grid[0].length || grid[row][col] === '0') return;
 
-        while (q.length > 0) {
-            const [row, col] = q.shift();
-            const directions = [[1, 0], [-1, 0], [0, 1], [0, -1]];
+        grid[row][col] = '0';
+        dfs(row + 1, col);
+        dfs(row - 1, col);
+        dfs(row, col + 1);
+        dfs(row, col - 1);
+    }
 
-            for (const [dr, dc] of directions) {
-                const nr = row + dr;
-                const nc = col + dc;
-                if (nr >= 0 && nr < rows && nc >= 0 && nc < cols && grid[nr][nc] === "1" && !visited.has(`${nr},${nc}`)) {
-                    q.push([nr, nc]);
-                    visited.add(`${nr},${nc}`);
-                }
-            }
-        }
-    };
-
-    for (let r = 0; r < rows; r++) {
-        for (let c = 0; c < cols; c++) {
-            if (grid[r][c] === "1" && !visited.has(`${r},${c}`)) {
-                islands += 1;
-                bfs(r, c);
+    for (let row = 0; row < grid.length; row++) {
+        for (let col = 0; col < grid[0].length; col++) {
+            if (grid[row][col] === '1') {
+                result++;
+                dfs(row, col);
             }
         }
     }
 
-    return islands;    
+    return result;
 };
