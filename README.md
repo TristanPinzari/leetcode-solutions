@@ -62,6 +62,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0036-valid-sudoku](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0036-valid-sudoku) |
 | [0073-set-matrix-zeroes](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0073-set-matrix-zeroes) |
 | [0076-minimum-window-substring](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0076-minimum-window-substring) |
+| [0205-isomorphic-strings](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0205-isomorphic-strings) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0380-insert-delete-getrandom-o1) |
 | [0383-ransom-note](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0383-ransom-note) |
 | [0387-first-unique-character-in-a-string](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0387-first-unique-character-in-a-string) |
@@ -101,6 +102,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0076-minimum-window-substring](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0076-minimum-window-substring) |
 | [0125-valid-palindrome](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0125-valid-palindrome) |
 | [0151-reverse-words-in-a-string](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0151-reverse-words-in-a-string) |
+| [0205-isomorphic-strings](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0205-isomorphic-strings) |
 | [0383-ransom-note](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0383-ransom-note) |
 | [0387-first-unique-character-in-a-string](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0387-first-unique-character-in-a-string) |
 | [0392-is-subsequence](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0392-is-subsequence) |
