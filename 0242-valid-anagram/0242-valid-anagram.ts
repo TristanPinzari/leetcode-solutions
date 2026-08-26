@@ -1,12 +1,22 @@
+function indexString(s: string) {
+    const minCharCode  = 97;
+    const arr = new Array(26).fill(0)
+    
+    for(let i = 0; i < s.length; i++) {
+        const charCode = s[i].charCodeAt(0) - minCharCode
+        arr[charCode] += 1;
+    }
+
+    return arr;
+}
+
 function isAnagram(s: string, t: string): boolean {
-    if (s.length !== t.length) return false;
-    const sMap = new Map(), tMap = new Map();
-    for (let i = 0; i < s.length; i++) {
-        sMap.set(s[i], (sMap.get(s[i]) ?? 0) + 1);
-        tMap.set(t[i], (tMap.get(t[i]) ?? 0) + 1);
+    const indexedS = indexString(s);
+    const indexedT = indexString(t);
+
+    for(let i = 0; i < indexedS.length; i++) {
+        if(indexedS[i] !== indexedT[i]) return false;
     }
-    for (const [key, val] of sMap) {
-        if (val !== tMap.get(key)) return false;
-    }
+
     return true;
 };
