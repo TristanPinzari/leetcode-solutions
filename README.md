@@ -15,6 +15,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0049-group-anagrams](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0049-group-anagrams) |
 | [0054-spiral-matrix](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0054-spiral-matrix) |
 | [0055-jump-game](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0055-jump-game) |
+| [0056-merge-intervals](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0056-merge-intervals) |
 | [0073-set-matrix-zeroes](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0073-set-matrix-zeroes) |
 | [0088-merge-sorted-array](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0088-merge-sorted-array) |
 | [0128-longest-consecutive-sequence](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0128-longest-consecutive-sequence) |
@@ -50,6 +51,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0015-3sum](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0015-3sum) |
 | [0049-group-anagrams](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0049-group-anagrams) |
+| [0056-merge-intervals](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0056-merge-intervals) |
 | [0088-merge-sorted-array](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0088-merge-sorted-array) |
 | [0242-valid-anagram](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0242-valid-anagram) |
 | [0274-h-index](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0274-h-index) |
@@ -214,4 +216,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0202-happy-number](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0202-happy-number) |
+## Quicksort
+|  |
+| ------- |
+| [0056-merge-intervals](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0056-merge-intervals) |
 <!---LeetCode Topics End-->
