@@ -33,6 +33,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0304-range-sum-query-2d-immutable](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0304-range-sum-query-2d-immutable) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0380-insert-delete-getrandom-o1) |
 | [0452-minimum-number-of-arrows-to-burst-balloons](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0452-minimum-number-of-arrows-to-burst-balloons) |
+| [1105-filling-bookcase-shelves](https://github.com/TristanPinzari/leetcode-solutions/tree/master/1105-filling-bookcase-shelves) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -40,6 +41,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0045-jump-game-ii](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0045-jump-game-ii) |
 | [0055-jump-game](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0055-jump-game) |
 | [0392-is-subsequence](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0392-is-subsequence) |
+| [1105-filling-bookcase-shelves](https://github.com/TristanPinzari/leetcode-solutions/tree/master/1105-filling-bookcase-shelves) |
 ## Greedy
 |  |
 | ------- |
