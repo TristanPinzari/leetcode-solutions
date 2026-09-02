@@ -1,24 +1,32 @@
 function isValid(s: string): boolean {
-    if  (s.length < 2) return false;
-    const stack = [];
-    const mapping = {
-        ')': '(',
-        '}': '{',
-        ']': '['
-    };
-    
-    for (const char of s) {
-        const mapRes = mapping[char];
-        if (!mapRes) {
-            stack.push(char);
-        } else {
-            if (stack[stack.length - 1] !== mapRes) {
-                return false;
-            } else {
-                stack.pop();
-            }
-        }
-    }
+  const len = s.length;
+  // Early exit: odd lengths can never be valid
+  if ((len & 1) !== 0) return false;
 
-    return stack.length === 0;
-};
+  // Fixed-size pre-allocated array avoids dynamic resizing overhead
+  const stack = new Array(len);
+  let top = -1;
+
+  for (let i = 0; i < len; i++) {
+    const c = s.charCodeAt(i);
+
+    // Using character codes avoids string primitive allocations
+    if (c === 40) {
+      // '('
+      stack[++top] = 41; // push ')'
+    } else if (c === 91) {
+      // '['
+      stack[++top] = 93; // push ']'
+    } else if (c === 123) {
+      // '{'
+      stack[++top] = 125; // push '}'
+    } else {
+      // Stack is empty or mismatched bracket
+      if (top === -1 || stack[top--] !== c) {
+        return false;
+      }
+    }
+  }
+
+  return top === -1;
+}
