@@ -12,8 +12,6 @@ function simplifyPath(path: string): string {
             top++;
         }
     }
-    console.log(items, top)
     stack.length = top;
-    console.log(stack)
     return "/" + stack.join("/");
 };
