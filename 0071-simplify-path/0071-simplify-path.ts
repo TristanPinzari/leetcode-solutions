@@ -4,7 +4,6 @@ function simplifyPath(path: string): string {
     for (const item of items) {
         if (!item || item === ".") continue;
         if (item === "..") {
-            stack.pop();
             if (top > 0) top--;
         } else {
             stack[top] = item;
@@ -13,4 +12,4 @@ function simplifyPath(path: string): string {
     }
     stack.length = top;
     return "/" + stack.join("/");
-};
+}
