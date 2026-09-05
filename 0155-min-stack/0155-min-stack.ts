@@ -1,32 +1,24 @@
 class MinStack {
-    arr: Array<number>;
-    trk: Array<number>;
+    arr: Array<Array<number>>;
 
     constructor() {
         this.arr = new Array();
-        this.trk = new Array();
     }
 
     push(value: number): void {
-        this.arr.push(value);
-        if (this.trk.length === 0) {
-            this.trk.push(this.arr.length - 1);
-            return;
-        }
-        this.trk.push(value < this.arr[this.trk[this.trk.length - 1]] ? this.arr.length - 1 : this.trk[this.trk.length - 1]);
+        this.arr.push([value, Math.min(this.getMin() ?? Infinity, value)]);
     }
 
     pop(): void {
         this.arr.pop();
-        this.trk.pop();
     }
 
     top(): number {
-       return this.arr[this.arr.length - 1]; 
+       return this.arr.length ? this.arr[this.arr.length - 1][0] : null; 
     }
 
     getMin(): number {
-        return this.arr[this.trk[this.trk.length - 1]];
+        return this.arr.length ? this.arr[this.arr.length - 1][1] : null;
     }
 }
 
