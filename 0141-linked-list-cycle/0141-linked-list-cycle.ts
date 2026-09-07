@@ -1,0 +1,22 @@
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function hasCycle(head: ListNode | null): boolean {
+    const set = new Set();
+    while (head && head.next) {
+        if (head.next === head) return true;
+        if (set.has(head)) return true;
+        set.add(head);
+        head = head.next;
+    }
+    return false;
+};
