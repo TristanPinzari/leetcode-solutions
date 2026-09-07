@@ -1,55 +1,44 @@
-function findCorrBracket(s: string, i: number): number {
-    let skip = 0;
-    for (let j = i + 1; j < s.length; j++) {
-        const char = s[j];
-        if (char === "(") {
-            skip++;
-            continue;
-        }
-        if (char === ")") {
-            if (skip > 0) {
-                skip--;
-                continue;
-            }
-            return j;
-        }
-    }
-}
-
-function calculateNormalized(s: string): number {
-    let result = 0, left = 0;
-    for (let i = 0; i < s.length; i++) {
-        if (s[i - 1] === "-" && s[i] === "-") {
-            left = i + 1;
-            continue;
-        }
-        if (i === s.length - 1) {
-            result += Number(s.slice(left, i + 1))
-            return result;
-        };
-        if (left !== i && (s[i] === "+" || s[i] === "-")) {
-            result += Number(s.slice(left, i));
-            left = s[i] === "+" ? i + 1 : i;
-        }
-    }
-}
-
-function resolve(s: string): number {
-    let normalized = "";
+function calculate(s: string): number {
+    const stack = new Array();
+    let result = 0, temp = 0, context = 1;
     for (let i = 0; i < s.length; i++) {
         const char = s[i];
-        if (char === " " || char === ")") continue;
-        if (char === "(") {
-            const corrBracket = findCorrBracket(s, i);
-            normalized += resolve(s.slice(i + 1, corrBracket));
-            i = corrBracket;
-        } else {
-            normalized += char;
+        if (char === " ") continue;
+        if (char === "0" || Number(char)) {
+            if (temp) temp *= 10;
+            temp += Number(char);
+            const next = s[i + 1];
+            if (!s[i + 1] || next === " " || isNaN(Number(s[i + 1]))) {
+                const res = Number(context * temp);
+                if (stack.length === 0) {
+                    result += res;
+                } else {
+                    stack[stack.length - 1][1] += res;
+                }
+                temp = 0;
+            }
+            continue;
+        }
+        switch (char) {
+            case "+":
+                context = 1;
+                break;
+            case "-":
+                context = -1;
+                break;
+            case "(":
+                stack.push([context, 0]);
+                context = 1;
+                break;
+            case ")":
+                const pop = stack.pop(), res = Number(pop[0] * pop[1])
+                if (stack.length === 0) {
+                    result += res;
+                } else {
+                    stack[stack.length - 1][1] += res;
+                }
+                break;
         }
     }
-    return calculateNormalized(normalized);
-}
-
-function calculate(s: string): number {
-    return resolve(s);
+    return result;
 };
