@@ -11,11 +11,11 @@
  */
 
 function hasCycle(head: ListNode | null): boolean {
-    const set = new Set();
-    while (head && head.next) {
-        if (head.next === head || set.has(head)) return true;
-        set.add(head);
-        head = head.next;
+    let slow = head, fast = head;
+    while (fast && fast.next) {
+        slow = slow!.next;
+        fast = fast.next.next;
+        if (slow === fast) return true;
     }
     return false;
-};
+}
