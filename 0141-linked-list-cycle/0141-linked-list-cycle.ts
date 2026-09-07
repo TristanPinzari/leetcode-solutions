@@ -13,8 +13,7 @@
 function hasCycle(head: ListNode | null): boolean {
     const set = new Set();
     while (head && head.next) {
-        if (head.next === head) return true;
-        if (set.has(head)) return true;
+        if (head.next === head || set.has(head)) return true;
         set.add(head);
         head = head.next;
     }
