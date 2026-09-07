@@ -1,33 +1,46 @@
 function calculate(s: string): number {
-    const stack: number[] = [];
-    let res = 0;
-    let curr = 0;
-    let sign = 1;
-
-    for (const c of s) {
-        if (/\d/.test(c)) {
-            curr = curr * 10 + Number(c);
-        } else if (c === '+') {
-            res += sign * curr;
-            sign = 1;
-            curr = 0;
-        } else if (c === '-') {
-            res += sign * curr;
-            sign = -1;
-            curr = 0;
-        } else if (c === '(') {
-            stack.push(res);
-            stack.push(sign);
-            res = 0;
-            sign = 1;
-        } else if (c === ')') {
-            res += sign * curr;
-            curr = 0;
-            res *= stack.pop()!;
-            res += stack.pop()!;
-        }
+    const sLength = s.length;
+    if (sLength === 1) {
+        return Number(s);
     }
 
-    res += sign * curr;
-    return res;
-}
+    let num = 0;
+    let sign = 1;
+    let result = 0;
+    const stack: number[] = [];
+
+    for (let i = 0; i < sLength; i++) {
+        const char = s[i];
+
+        if (char === " ") {
+            continue;
+        }
+
+        if (char === "+" || char === "-") {
+            result += sign * num;
+            sign = char === "+" ? 1 : -1;
+            num = 0;
+            continue;
+        }
+
+        if (char === "(") {
+            stack.push(result);
+            stack.push(sign);
+            result = 0;
+            sign = 1;
+            continue;
+        }
+
+        if (char === ")") {
+            result += sign * num;
+            num = 0;
+            result *= stack.pop()!;
+            result += stack.pop()!;
+            continue;
+        }
+
+        num = num * 10 + Number(char);
+    }
+
+    return result + sign * num;
+};
