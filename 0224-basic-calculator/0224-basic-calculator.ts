@@ -1,44 +1,46 @@
 function calculate(s: string): number {
-    const stack = new Array();
-    let result = 0, temp = 0, context = 1;
-    for (let i = 0; i < s.length; i++) {
+    const sLength = s.length;
+    if (sLength === 1) {
+        return Number(s);
+    }
+
+    let num = 0;
+    let sign = 1;
+    let result = 0;
+    const stack: number[] = [];
+
+    for (let i = 0; i < sLength; i++) {
         const char = s[i];
-        if (char === " ") continue;
-        if (char === "0" || Number(char)) {
-            if (temp) temp *= 10;
-            temp += Number(char);
-            const next = s[i + 1];
-            if (!s[i + 1] || next === " " || isNaN(Number(s[i + 1]))) {
-                const res = Number(context * temp);
-                if (stack.length === 0) {
-                    result += res;
-                } else {
-                    stack[stack.length - 1][1] += res;
-                }
-                temp = 0;
-            }
+
+        if (char === " ") {
             continue;
         }
-        switch (char) {
-            case "+":
-                context = 1;
-                break;
-            case "-":
-                context = -1;
-                break;
-            case "(":
-                stack.push([context, 0]);
-                context = 1;
-                break;
-            case ")":
-                const pop = stack.pop(), res = Number(pop[0] * pop[1])
-                if (stack.length === 0) {
-                    result += res;
-                } else {
-                    stack[stack.length - 1][1] += res;
-                }
-                break;
+
+        if (char === "+" || char === "-") {
+            result += sign * num;
+            sign = char === "+" ? 1 : -1;
+            num = 0;
+            continue;
         }
+
+        if (char === "(") {
+            stack.push(result);
+            stack.push(sign);
+            result = 0;
+            sign = 1;
+            continue;
+        }
+
+        if (char === ")") {
+            result += sign * num;
+            num = 0;
+            result *= stack.pop()!;
+            result += stack.pop()!;
+            continue;
+        }
+
+        num = num * 10 + Number(char);
     }
-    return result;
+
+    return result + sign * num;
 };
