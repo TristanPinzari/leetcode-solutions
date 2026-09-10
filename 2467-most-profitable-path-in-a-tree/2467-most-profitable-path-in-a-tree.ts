@@ -1,51 +1,91 @@
 function mostProfitablePath(edges: number[][], bob: number, amount: number[]): number {
-    const map = new Map();
-    for (const [a, b] of edges) {
-        if (!map.has(a)) map.set(a, []);
-        if (!map.has(b)) map.set(b, []);
-        map.get(a)!.push(b);
-        map.get(b)!.push(a);
+    const n = amount.length;
+    const adj: number[][] = Array.from({ length: n }, () => []);
+    for (const [u, v] of edges) {
+        adj[u].push(v);
+        adj[v].push(u);
     }
 
-    let bobPath = new Array();
-    function findBobPath(node: number, parent: number): boolean {
-        if (node === bob) {
-            bobPath.push(bob);
-            return true;
-        }
-        for (const next of map.get(node) ?? []) {
-            if (next !== parent && findBobPath(next, node)) {
-                bobPath.push(node);
-                return true;
+    const parent = new Int32Array(n).fill(-1);
+    const queue = new Int32Array(n);
+    const visited = new Uint8Array(n);
+    let head = 0;
+    let tail = 0;
+
+    queue[tail++] = 0;
+    visited[0] = 1;
+
+    while (head < tail) {
+        const u = queue[head++];
+        for (const v of adj[u]) {
+            if (!visited[v]) {
+                visited[v] = 1;
+                parent[v] = u;
+                queue[tail++] = v;
             }
         }
-        return false;
     }
-    findBobPath(0, -1);
 
-    const bobTime = new Map<number, number>();
-    bobPath.forEach((node, i) => bobTime.set(node, i));
+    const bobTimes = new Int32Array(n).fill(-1);
+    let curr = bob;
+    let time = 0;
+    while (curr !== -1) {
+        bobTimes[curr] = time;
+        curr = parent[curr];
+        time++;
+    }
 
-    let highest = -Infinity;
-    function findAlicePath(step: number, node: number, parent: number, net: number) {
-        const bTime = bobTime.get(node);
-        if (bTime === undefined || step < bTime) {
-            net += amount[node];
-        } else if (step === bTime) {
-            net += amount[node] / 2;
-        }
+    let maxIncome = -Infinity;
+    const stackU = new Int32Array(n);
+    const stackP = new Int32Array(n);
+    const stackTime = new Int32Array(n);
+    const stackIncome = new Float64Array(n);
+    let stackPtr = 0;
 
-        const neighbors = (map.get(node) ?? []).filter((n: number) => n !== parent);
+    stackU[stackPtr] = 0;
+    stackP[stackPtr] = -1;
+    stackTime[stackPtr] = 0;
+    stackIncome[stackPtr] = 0;
+    stackPtr++;
 
-        if (neighbors.length === 0) {
-            highest = Math.max(highest, net);
+    while (stackPtr > 0) {
+        stackPtr--;
+        const u = stackU[stackPtr];
+        const p = stackP[stackPtr];
+        const time_A = stackTime[stackPtr];
+        const income_before = stackIncome[stackPtr];
+
+        let currentIncome = income_before;
+        const bTime = bobTimes[u];
+
+        if (bTime !== -1) {
+            if (time_A < bTime) {
+                currentIncome += amount[u];
+            } else if (time_A === bTime) {
+                currentIncome += amount[u] / 2;
+            }
         } else {
-            for (const connection of neighbors) {
-                findAlicePath(step + 1, connection, node, net);
+            currentIncome += amount[u];
+        }
+
+        let isLeaf = true;
+        for (const v of adj[u]) {
+            if (v !== p) {
+                isLeaf = false;
+                stackU[stackPtr] = v;
+                stackP[stackPtr] = u;
+                stackTime[stackPtr] = time_A + 1;
+                stackIncome[stackPtr] = currentIncome;
+                stackPtr++;
+            }
+        }
+
+        if (isLeaf && u !== 0) {
+            if (currentIncome > maxIncome) {
+                maxIncome = currentIncome;
             }
         }
     }
-    findAlicePath(0, 0, -1, 0);
-    
-    return highest;
-};
+
+    return maxIncome;
+}
