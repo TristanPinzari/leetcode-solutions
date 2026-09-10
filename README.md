@@ -35,6 +35,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0380-insert-delete-getrandom-o1](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0380-insert-delete-getrandom-o1) |
 | [0452-minimum-number-of-arrows-to-burst-balloons](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0452-minimum-number-of-arrows-to-burst-balloons) |
 | [1105-filling-bookcase-shelves](https://github.com/TristanPinzari/leetcode-solutions/tree/master/1105-filling-bookcase-shelves) |
+| [2467-most-profitable-path-in-a-tree](https://github.com/TristanPinzari/leetcode-solutions/tree/master/2467-most-profitable-path-in-a-tree) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -224,10 +225,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0200-number-of-islands) |
+| [2467-most-profitable-path-in-a-tree](https://github.com/TristanPinzari/leetcode-solutions/tree/master/2467-most-profitable-path-in-a-tree) |
 ## Breadth-First Search
 |  |
 | ------- |
 | [0200-number-of-islands](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0200-number-of-islands) |
+| [2467-most-profitable-path-in-a-tree](https://github.com/TristanPinzari/leetcode-solutions/tree/master/2467-most-profitable-path-in-a-tree) |
 ## Union-Find
 |  |
 | ------- |
@@ -256,4 +259,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0002-add-two-numbers](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0002-add-two-numbers) |
 | [0141-linked-list-cycle](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0141-linked-list-cycle) |
+## Tree
+|  |
+| ------- |
+| [2467-most-profitable-path-in-a-tree](https://github.com/TristanPinzari/leetcode-solutions/tree/master/2467-most-profitable-path-in-a-tree) |
+## Graph Theory
+|  |
+| ------- |
+| [2467-most-profitable-path-in-a-tree](https://github.com/TristanPinzari/leetcode-solutions/tree/master/2467-most-profitable-path-in-a-tree) |
 <!---LeetCode Topics End-->
