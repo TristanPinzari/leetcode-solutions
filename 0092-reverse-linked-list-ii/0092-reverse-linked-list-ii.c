@@ -5,43 +5,34 @@
  *     struct ListNode *next;
  * };
  */
+
 struct ListNode* reverseBetween(struct ListNode* head, int left, int right) {
-    struct ListNode* headSave = head;
-    if (left == right) return head;
-    struct ListNode* last = NULL;
-    struct ListNode* firstEnd = NULL;
-    struct ListNode* firstHead = NULL;
-    int index = 1;
-    while (head) {
-        if (index < left) {
-            last = head;
-            index++;
-            head = head->next;
-            continue;
-        }
-        if (index == left) {
-            firstEnd = last;
-            firstHead = head;
-            last = head; 
-            head = head->next;
-        }
-        if (index == right) {
-            if (firstEnd) {
-                firstEnd->next = head;
-            } else {
-                headSave = head;
-            }
-            firstHead->next = head->next;
-            head->next = last;
-            break;
-        }
-        if (left < index && index < right) {
-            struct ListNode* temp = head->next;
-            head->next = last;
-            last = head;
-            head = temp;
-        }
-        index++;
+    if (head == NULL || left == right) {
+        return head;
     }
-    return headSave;
+
+    // Dummy node to handle edge cases where left == 1 (reversing from the head)
+    struct ListNode dummy;
+    dummy.val = 0;
+    dummy.next = head;
+
+    struct ListNode* prev = &dummy;
+
+    // Move prev to the node directly preceding position 'left'
+    for (int i = 0; i < left - 1; i++) {
+        prev = prev->next;
+    }
+
+    // Start of sublist to be reversed
+    struct ListNode* curr = prev->next;
+
+    // Reverse sublist in-place from left to right
+    for (int i = 0; i < right - left; i++) {
+        struct ListNode* temp = curr->next;
+        curr->next = temp->next;
+        temp->next = prev->next;
+        prev->next = temp;
+    }
+
+    return dummy.next;
 }
