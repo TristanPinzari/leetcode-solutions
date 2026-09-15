@@ -5,28 +5,25 @@
  *     struct ListNode *next;
  * };
  */
-struct ListNode* partition(struct ListNode* head, int x) {
-    struct ListNode dummy;
-    dummy.next = head;
 
-    struct ListNode* lastSorted = &dummy;
-    struct ListNode* prev = &dummy;
+struct ListNode* partition(struct ListNode* head, int x) {
+    struct ListNode lessDummy, greaterDummy;
+    struct ListNode* less = &lessDummy;
+    struct ListNode* greater = &greaterDummy;
 
     while (head) {
-        struct ListNode* temp = head->next;
-        struct ListNode* nextPrev = head;
         if (head->val < x) {
-            if (head != lastSorted->next) {
-                head->next = lastSorted->next;
-                lastSorted->next = head;
-                prev->next = temp;
-                nextPrev = prev;
-            };
-            lastSorted = head;
+            less->next = head;
+            less = less->next;
+        } else {
+            greater->next = head;
+            greater = greater->next;
         }
-        prev = nextPrev;
-        head = temp;
+        head = head->next;
     }
 
-    return dummy.next;
+    greater->next = NULL;
+    less->next = greaterDummy.next;
+
+    return lessDummy.next;
 }
