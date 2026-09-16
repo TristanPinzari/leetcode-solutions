@@ -84,6 +84,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0128-longest-consecutive-sequence](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0128-longest-consecutive-sequence) |
 | [0138-copy-list-with-random-pointer](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0138-copy-list-with-random-pointer) |
 | [0141-linked-list-cycle](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0141-linked-list-cycle) |
+| [0146-lru-cache](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0146-lru-cache) |
 | [0202-happy-number](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0202-happy-number) |
 | [0205-isomorphic-strings](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0205-isomorphic-strings) |
 | [0219-contains-duplicate-ii](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0219-contains-duplicate-ii) |
@@ -106,6 +107,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Design
 |  |
 | ------- |
+| [0146-lru-cache](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0146-lru-cache) |
 | [0155-min-stack](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0155-min-stack) |
 | [0304-range-sum-query-2d-immutable](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0304-range-sum-query-2d-immutable) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0380-insert-delete-getrandom-o1) |
@@ -274,6 +276,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0092-reverse-linked-list-ii](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0092-reverse-linked-list-ii) |
 | [0138-copy-list-with-random-pointer](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0138-copy-list-with-random-pointer) |
 | [0141-linked-list-cycle](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0141-linked-list-cycle) |
+| [0146-lru-cache](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0146-lru-cache) |
 ## Tree
 |  |
 | ------- |
@@ -282,4 +285,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2467-most-profitable-path-in-a-tree](https://github.com/TristanPinzari/leetcode-solutions/tree/master/2467-most-profitable-path-in-a-tree) |
+## Doubly-Linked List
+|  |
+| ------- |
+| [0146-lru-cache](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0146-lru-cache) |
 <!---LeetCode Topics End-->
