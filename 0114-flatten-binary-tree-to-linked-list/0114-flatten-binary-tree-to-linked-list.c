@@ -7,19 +7,21 @@
  * };
  */
 
-struct TreeNode* flatten2(struct TreeNode* node) {
-    if (!node || (!node->left && !node->right)) return node;
-    struct TreeNode* temp = node->right;
-    struct TreeNode* res;
-    if (node->left) {
-        node->right = node->left;
-        node->left = NULL;
-        res = flatten2(node->right);
-        res->right = temp;
-    }
-    return temp ? flatten2(temp) : res;
-}
-
 void flatten(struct TreeNode* root) {
-    flatten2(root);
+    struct TreeNode* curr = root;
+    while (curr) {
+        if (curr->left) {
+            // find the rightmost node of the left subtree
+            struct TreeNode* pred = curr->left;
+            while (pred->right) {
+                pred = pred->right;
+            }
+            // attach the original right subtree to the end of the left subtree
+            pred->right = curr->right;
+            // move left subtree to the right, clear left
+            curr->right = curr->left;
+            curr->left = NULL;
+        }
+        curr = curr->right;   // advance to the next node in the flattened chain
+    }
 }
