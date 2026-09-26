@@ -114,6 +114,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0146-lru-cache](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0146-lru-cache) |
 | [0155-min-stack](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0155-min-stack) |
+| [0173-binary-search-tree-iterator](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0173-binary-search-tree-iterator) |
 | [0304-range-sum-query-2d-immutable](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0304-range-sum-query-2d-immutable) |
 | [0380-insert-delete-getrandom-o1](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0380-insert-delete-getrandom-o1) |
 ## Randomized
@@ -181,6 +182,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0114-flatten-binary-tree-to-linked-list](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0114-flatten-binary-tree-to-linked-list) |
 | [0150-evaluate-reverse-polish-notation](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0150-evaluate-reverse-polish-notation) |
 | [0155-min-stack](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0155-min-stack) |
+| [0173-binary-search-tree-iterator](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0173-binary-search-tree-iterator) |
 | [0224-basic-calculator](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0224-basic-calculator) |
 ## Monotonic Stack
 |  |
@@ -313,6 +315,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0117-populating-next-right-pointers-in-each-node-ii](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0117-populating-next-right-pointers-in-each-node-ii) |
 | [0124-binary-tree-maximum-path-sum](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0129-sum-root-to-leaf-numbers](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0129-sum-root-to-leaf-numbers) |
+| [0173-binary-search-tree-iterator](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0173-binary-search-tree-iterator) |
 | [0226-invert-binary-tree](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0226-invert-binary-tree) |
 | [2467-most-profitable-path-in-a-tree](https://github.com/TristanPinzari/leetcode-solutions/tree/master/2467-most-profitable-path-in-a-tree) |
 ## Graph Theory
@@ -336,6 +339,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0117-populating-next-right-pointers-in-each-node-ii](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0117-populating-next-right-pointers-in-each-node-ii) |
 | [0124-binary-tree-maximum-path-sum](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0124-binary-tree-maximum-path-sum) |
 | [0129-sum-root-to-leaf-numbers](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0129-sum-root-to-leaf-numbers) |
+| [0173-binary-search-tree-iterator](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0173-binary-search-tree-iterator) |
 | [0226-invert-binary-tree](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0226-invert-binary-tree) |
 ## Divide and Conquer
 |  |
@@ -346,4 +350,12 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0124-binary-tree-maximum-path-sum](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0124-binary-tree-maximum-path-sum) |
+## Binary Search Tree
+|  |
+| ------- |
+| [0173-binary-search-tree-iterator](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0173-binary-search-tree-iterator) |
+## Iterator
+|  |
+| ------- |
+| [0173-binary-search-tree-iterator](https://github.com/TristanPinzari/leetcode-solutions/tree/master/0173-binary-search-tree-iterator) |
 <!---LeetCode Topics End-->
