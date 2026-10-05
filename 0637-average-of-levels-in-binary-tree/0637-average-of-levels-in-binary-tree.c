@@ -1,45 +1,29 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     struct TreeNode *left;
- *     struct TreeNode *right;
- * };
- */
-/**
- * Note: The returned array must be malloced, assume caller calls free().
- */
-double* averageOfLevels(struct TreeNode* root, int* returnSize) {
-    if (!root) { *returnSize = 0; return (double*) malloc(0); }
+double* averageOfLevels(struct TreeNode* root,int* returnSize){
+    double *ans=malloc(10000*sizeof(double));
+    struct TreeNode *queue[10000];
 
-    int index = 0;
-    double* output = malloc(sizeof(double) * 10000);
+    int front=0,rear=0,levels=0;
 
-    struct TreeNode** container = malloc(sizeof(struct TreeNode*) * 100);
-    int containerIndex = 0;
-    container[containerIndex++] = root;
+    queue[rear++]=root;
 
-    while (containerIndex) {
-        struct TreeNode** newContainer = malloc(sizeof(struct TreeNode*) * 10000);
-        int newContainerIndex = 0;
-        double sum = 0;
+    while(front<rear){
+        int n=rear-front;
+        double sum=0;
 
-        for (int j = 0; j < containerIndex; j++) {
-            struct TreeNode* curr = container[j];
-            sum += curr->val;
-            if (curr->left) {
-                newContainer[newContainerIndex++] = curr->left;
-            }
-            if (curr->right) {
-                newContainer[newContainerIndex++] = curr->right;
-            }
+        for(int i=0;i<n;i++){
+            struct TreeNode *temp=queue[front++];
+            sum+=temp->val;
+
+            if(temp->left)
+                queue[rear++]=temp->left;
+
+            if(temp->right)
+                queue[rear++]=temp->right;
         }
 
-        output[index++] = containerIndex ? sum / containerIndex : 0;
-        container = newContainer;
-        containerIndex = newContainerIndex;
+        ans[levels++]=sum/n;
     }
 
-    *returnSize = index;
-    return output;
+    *returnSize=levels;
+    return ans;
 }
